@@ -16,11 +16,8 @@ prompt.get([{
 }, {
   name: 'password',
   hidden: true,
-  replace: '*',
-  conform: function (value) {
-    return true;
-  }
-}], function (err, result) {
+  replace: '*'
+}], (err, result) => {
   console.log('Command-line input received:');
   console.log('  username: ' + result.username);
   console.log('  password: ' + result.password);
