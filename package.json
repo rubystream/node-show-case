@@ -1,0 +1,25 @@
+{
+  "name": "node-show-case",
+  "version": "1.0.0",
+  "description": "Node Show case",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rubystream/node-show-case.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rubystream/node-show-case/issues"
+  },
+  "homepage": "https://github.com/rubystream/node-show-case#readme",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "child_process": "^1.0.2",
+    "commander": "^2.9.0",
+    "prompt": "^1.0.0"
+  }
+}
