@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "eslint": "^3.10.2",
-    "eslint-config-defaults": "^9.0.0"
+    "eslint-config-defaults": "^9.0.0",
+    "mongoose": "^4.7.0"
   }
 }

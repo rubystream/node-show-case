@@ -30,19 +30,19 @@ var insertMovies = function (db, callback) {
     console.log(['Inserted ', result.ops.length, ' documents into the Movies collection'].join(''));
     callback(result);
   });
-}
+};
 
 var listMoveis = function (db, callback) {
   // Get the documents collection
   var collection = db.collection(collectionName);
   // Find some documents
-  collection.find({}).toArray(function (err, docs) {
+  collection.find({}).toArray((err, docs) => {
     assert.equal(err, null);
-    console.log("Found the following records");
-    console.log(docs)
+    console.log('Found the following records');
+    console.log(docs);
     callback(docs);
   });
-}
+};
 
 var findMovies = function (db, callback) {
   // Get the documents collection
@@ -52,11 +52,11 @@ var findMovies = function (db, callback) {
     'name': 'Jumanji'
   }).toArray((err, docs) => {
     assert.equal(err, null);
-    console.log("Found the following records");
+    console.log('Found the following records');
     console.log(docs);
     callback(docs);
   });
-}
+};
 
 var updateMovie = function (db, callback) {
   // Get the documents collection
@@ -67,25 +67,27 @@ var updateMovie = function (db, callback) {
     $set: {
       'genres': 'Adventure|Fantasy'
     }
-  }, function (err, result) {
+  }, (err, result) => {
     assert.equal(err, null);
     assert.equal(1, result.result.n);
-    console.log("Updated the document with the field name equal to Jumanji");
+    console.log('Updated the document with the field name equal to Jumanji');
     callback(result);
   });
-}
+};
 
-var removeMovie = function(db, callback) {
+var removeMovie = function (db, callback) {
   // Get the documents collection
   var collection = db.collection(collectionName);
   // Insert some documents
-  collection.deleteOne({ name : 'The American President' }, function(err, result) {
+  collection.deleteOne({
+    name: 'The American President'
+  }, (err, result) => {
     assert.equal(err, null);
     assert.equal(1, result.result.n);
     console.log('Removed the document');
     callback(result);
-  });    
-}
+  });
+};
 
 // Use connect method to connect to the server
 MongoClient.connect(url, (err, db) => {
